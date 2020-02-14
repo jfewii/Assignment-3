@@ -2,13 +2,13 @@
 /**
  * A WordGram represents a sequence of strings
  * just as a String represents a sequence of characters
- * 
+ *
  * @author Jason Few
  *
  */
 public class WordGram {
-	
-	private String[] myWords;   
+
+	private String[] myWords;
 	private String myToString;  // cached string
 	private int myHash;         // cached hash value
 
@@ -32,7 +32,7 @@ public class WordGram {
 
 	/**
 	 * Return string at specific index in this WordGram
-	 * @param index in range [0..length() ) for string 
+	 * @param index in range [0..length() ) for string
 	 * @return string at index
 	 */
 	public String wordAt(int index) {
@@ -71,7 +71,7 @@ public class WordGram {
 		}
 		return myHash;
 	}
-	
+
 
 	/**
 	 * Create and complete this comment
@@ -86,7 +86,7 @@ public class WordGram {
 		}
 		s[myWords.length-1] = last;
 
-		WordGram retvalue = new WordGram(s, 0, myWords.length)
+		WordGram retvalue = new WordGram(s, 0, myWords.length);
 		return retvalue;
 	}
 
