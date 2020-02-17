@@ -8,7 +8,7 @@ save it as a .pdf.
 You'll submit the .PDF version of your analysis as a separate submission on Gradescope.
 ____________________________________________________________________________________
 
-YOUR NAME and YOUR NETID
+Jason Few 
 
 Run WordGramBenchmark for wordgrams of size 2-10 and record
 the number of WordGram values/objects that occur more than
@@ -25,13 +25,13 @@ values of WSIZE
 WSIZE    # duplicates
 2        60,453
 3        10,756
-4
-5
-6
-7
-8
-9
-10
+4        1,987
+5        667
+6        362
+7        226
+8        151
+9        105
+10       73
 
 =====
 Explain in your own words the conceptual differences between
@@ -64,5 +64,3 @@ as WSIZE and the number of words in the text, N:
 (5) Compare your answers for total memory from (3)(e) for benchmark() and (4)(e) for benchmarkShift().
 Is the total amount of memory the same or different in benchmark() and benchmarkShift()? If different,
 which one uses more memory?
-
-
