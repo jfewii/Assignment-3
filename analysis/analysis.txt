@@ -8,7 +8,7 @@ save it as a .pdf.
 You'll submit the .PDF version of your analysis as a separate submission on Gradescope.
 ____________________________________________________________________________________
 
-Jason Few 
+Jason Few and jbf32
 
 Run WordGramBenchmark for wordgrams of size 2-10 and record
 the number of WordGram values/objects that occur more than
@@ -41,26 +41,66 @@ Answer these questions:
 (1) Why the results of these methods should be the same in
 terms of changes made to the HashSet parameter passed to each method.
 
+They both add the same words into the HashSet parameter. However, benchmark makes a new WordGram every iteration and benchmarkShift shifts the first WordGram until it reaches the same output.
+
 (2) What are the conceptual differences between the two
 benchmarking methods
+
+benchmark creates a new object each time and benchmarkShift modifies the existing object
 
 (3) We will now analyze and compare the amount of memory allocated for ALL arrays in the two methods.
 For the benchmark() method, answer the following questions, giving answers in terms of variables such
 as WSIZE and the number of words in the text, N:
     (a) Are there any String[] arrays created directly within the method? If yes, what are their sizes?
     You do not need to count ArrayLists.
+
+    Yes the one string array created has size N
+
     (b) How many WordGram objects are created in total, either directly or indirectly? Note that the
     shiftAdd() method creates and returns a NEW WordGram object every time it’s called.
+
+    The total number of WordGram objects is N-WSIZE
+
     (c) Each WordGram object stores a String[] array, created in the constructor, which takes up memory.
     What’s the size of this array for each WordGram?
+
+    Each word gram is WSIZE
+
     (d) Does your shiftAdd() method create additional String[] arrays? If yes, what’s the total size of
     arrays created over all shiftAdd() method calls if applicable? (The answer may be different depending
     on your implementation.)
+
+    shiftAdd() is never used in benchmark so there are no additional arrays
+
     (e) Based on your answers to (a)-(d), what’s the total amount of memory taken up by all String[] arrays,
     in terms of their total size?
 
+    WSIZE*(N-WSIZE)+N
+
 (4) Answer the same questions (a)-(e) from question (3) for the method benchmarkShift()
+
+    (a)
+
+    Yes the string array created is size WSIZE
+
+    (b)
+
+    The total amount is N-WSIZE
+
+    (c)
+
+    Each array is WSIZE
+
+    (d)
+
+    Yes it creates an additional array so the total size of arrays created is (N-WSIZE)*WSIZE
+
+    (e)
+
+    2*WSIZE*(N-WSIZE)+WSIZE
 
 (5) Compare your answers for total memory from (3)(e) for benchmark() and (4)(e) for benchmarkShift().
 Is the total amount of memory the same or different in benchmark() and benchmarkShift()? If different,
 which one uses more memory?
+
+benchmarkShift uses more memory; however, it is faster than benchmark because

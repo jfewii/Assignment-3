@@ -44,7 +44,7 @@ public class WordGram {
 
 	/**
 	 * Complete this comment
-	 * @return
+	 * @return returns the int number of words of the list of myWords
 	 */
 	public int length(){
 		return myWords.length;
@@ -54,7 +54,7 @@ public class WordGram {
 	/**
 	 * Complete appropriate comment here
 	 * @param o
-	 * @return
+	 * @return returns a boolean to see if two strings are equal
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -65,6 +65,7 @@ public class WordGram {
 	}
 
 	@Override
+
 	public int hashCode(){
 		if (myHash == 0){
 			myHash = this.toString().hashCode();
@@ -76,7 +77,7 @@ public class WordGram {
 	/**
 	 * Create and complete this comment
 	 * @param last is last String of returned WordGram
-	 * @return
+	 * @return A new WordGram that obtains all the orignal words and adds 'last' to it
 	 */
 	public WordGram shiftAdd(String last) {
 		WordGram wg = new WordGram(myWords,0,myWords.length);
